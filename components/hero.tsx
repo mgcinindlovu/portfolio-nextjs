@@ -1,45 +1,30 @@
-"use client"
+import React from 'react';
+import Image from 'next/image';
+import backgroundImage from '../assets/african.png';
+import rightImage from '../assets/hero.png';
+import About from './About';
 
-import { Github, Linkedin, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import AnimatedElement from "./animated-element"
+const Hero = () => {
+  console.log('Background Image Path:', backgroundImage);
 
-export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen text-center px-4 overflow-hidden">
-      <AnimatedElement>
-        <motion.h1
-          className="text-4xl font-bold mb-4"
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-        >
-          John Doe
-        </motion.h1>
-      </AnimatedElement>
-      <AnimatedElement delay={0.2}>
-        <h2 className="text-2xl text-muted-foreground mb-6">Full Stack Developer</h2>
-      </AnimatedElement>
-      <AnimatedElement delay={0.4}>
-        <p className="max-w-2xl mb-8">
-          Passionate about creating elegant solutions to complex problems. With expertise in React, Node.js, and cloud
-          technologies, I build scalable and user-friendly applications.
+    <div className="relative h-[80vh] bg-cover bg-center bg-no-repeat rounded-lg" style={{ backgroundImage: `url(${backgroundImage})`, backgroundColor: '#261B6C', margin: '0 120px' }}>
+      <div className="absolute left-[5%] top-1/2 left-5 transform -translate-y-1/2 text-white">
+        <h1 className="text-5xl font-bold leading-tight mb-5">Bringing you the <br/>
+        <span className="underline" style={{ textDecorationColor: '#a17c48' }}>best value</span> at the <br/>
+        <span className="underline" style={{ textDecorationColor: '#a17c48' }}>best prices</span>.</h1>
+        <p className="text-xl mb-5 max-w-md text-[23px]" >
+        The freshest sandwiches you can <br/> make with Baker's inn soft white <br/> loaf.
         </p>
-      </AnimatedElement>
-      <AnimatedElement delay={0.6}>
-        <motion.div className="flex space-x-4" whileHover={{ scale: 1.05 }}>
-          <Button variant="outline" size="icon" className="hover:rotate-12 transition-transform">
-            <Github className="h-5 w-5" />
-          </Button>
-          <Button variant="outline" size="icon" className="hover:-rotate-12 transition-transform">
-            <Linkedin className="h-5 w-5" />
-          </Button>
-          <Button variant="outline" size="icon" className="hover:rotate-12 transition-transform">
-            <Mail className="h-5 w-5" />
-          </Button>
-        </motion.div>
-      </AnimatedElement>
-    </section>
-  )
-}
+        <button className="bg-[#a17c48] font-bold text-white border-none  cursor-pointer rounded text-[23px] py-[10px] px-[50px]">
+          READ MORE
+        </button>
+      </div>
+      <div className="absolute top-1/2 right-[5%] transform -translate-y-1/2">
+        <Image src={rightImage} alt="Right Side Image" height={550} />
+      </div>
+    </div>
+  );
+};
 
+export default Hero; 
