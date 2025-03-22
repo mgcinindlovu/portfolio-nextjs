@@ -5,6 +5,7 @@ import ProductRange from '@/components/ProductRange';
 import Factory from '@/components/Factory';
 import Request from '@/components/Request';
 import Game from '@/components/Game';
+import Recipe from '@/components/Recipe';
 const Page = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const Page = () => {
       <Factory />
       <Request />
       <Game />
+      <Recipe />
       {/* Add other page content here */}
     </div>
   );
